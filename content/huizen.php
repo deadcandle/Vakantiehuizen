@@ -16,7 +16,6 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-3">e</div>
     <?php
         require("config/db_config.php");
         $conn = new mysqli($host, $user, $pass, $db);
@@ -24,7 +23,12 @@
         $result = $conn -> query($pageData);
         if ($result -> num_rows > 0) {
             while ($row = $result -> fetch_assoc()) {
-                echo "<hp>".$row["omschrijving"]."</hp>";
+                echo "<div class='col-3'>";
+                echo "<h3>".$row["huis"]."</h3>";
+                echo "<p>".$row["omschrijving"]."</p>";
+                echo "<hr>";
+                echo "<b style='float:right'>€ ".$row["prijs"]."</b>";
+                echo "</div>";
             }
         }
         ?>

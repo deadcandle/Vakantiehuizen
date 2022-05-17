@@ -20,13 +20,41 @@ create table huizen (
     primary key (id)
 );
 
+-- opdracht 14: afbeeldingen voor de huizen
+create table afbeeldingen (
+	huis_id int,
+    id int auto_increment,
+    afbeelding varchar(255),
+    primary key (id),
+    foreign key (huis_id) references huizen (id)
+);
+
+
+-- inserts:
+
+-- paginas:
 insert into teksten (pagina, titel, tekst) values ("index", "de titel Homepagina", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nam eaque, corporis nostrum quo qui similique quidem culpa explicabo maiores laboriosam dolore alias eveniet, facilis consequatur tempore esse distinctio repudiandae.");
 insert into teksten (pagina, titel, tekst) values ("huizen", "de titel Huizen", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nam eaque, corporis nostrum quo qui similique quidem culpa explicabo maiores laboriosam dolore alias eveniet, facilis consequatur tempore esse distinctio repudiandae.");
 insert into teksten (pagina, titel, tekst) values ("contact", "de titel Contact", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nam eaque, corporis nostrum quo qui similique quidem culpa explicabo maiores laboriosam dolore alias eveniet, facilis consequatur tempore esse distinctio repudiandae.");
 
-
 -- Voeg de huizen toe
-insert into huizen (huis, personen, omschrijving, prijs) values ("Huisplaats1", 8, "dit is een huis omschrijving", 95.00);
-insert into huizen (huis, personen, omschrijving, prijs) values ("Huisplaatsvoorbeeld2", 12, "dit is een huis omschrijving", 120.00);
-insert into huizen (huis, personen, omschrijving, prijs) values ("Huisvoorbeeld3", 10, "dit is een huis omschrijving", 110.50);
-insert into huizen (huis, personen, omschrijving, prijs) values ("Huis Plaats4", 16, "dit is een huis omschrijving", 135.95);
+insert into huizen (huis, personen, omschrijving, prijs) values ("Plaats1", 8, "dit is een huis omschrijving", 95.00);
+insert into huizen (huis, personen, omschrijving, prijs) values ("Plaats2", 12, "dit is een huis omschrijving", 120.00);
+insert into huizen (huis, personen, omschrijving, prijs) values ("Plaats3", 10, "dit is een huis omschrijving", 110.50);
+insert into huizen (huis, personen, omschrijving, prijs) values ("Plaats4", 16, "dit is een huis omschrijving", 135.95);
+
+-- afbeeldingen (voor huizen)
+insert into afbeeldingen (huis_id, afbeelding) values (1, "huis1.jpg");
+insert into afbeeldingen (huis_id, afbeelding) values (2, "huis2.jpg");
+insert into afbeeldingen (huis_id, afbeelding) values (3, "huis3.jpg");
+
+
+
+-- (TEST) selecteer huisen en de fotos met mySQL JOIN
+select a.afbeelding, h.huis from afbeeldingen inner join huizen on afbeelding.huis_id = h.id;
+
+
+
+
+
+

@@ -13,5 +13,9 @@
             echo "<hp>".$row["tekst"]."</hp>";
         ?>
         <?php } ?>
+        <br><br>
+        <div class="row">
+            <img src="images/armoedehuis.jpg" alt="">
+        </div>
     </div>
 </div>
