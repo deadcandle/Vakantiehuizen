@@ -49,11 +49,11 @@ insert into afbeeldingen (huis_id, afbeelding) values (2, "huis2.jpg");
 insert into afbeeldingen (huis_id, afbeelding) values (3, "huis3.jpg");
 
 
-
 -- (TEST) selecteer huisen en de fotos met mySQL JOIN
-select a.afbeelding, h.huis from afbeeldingen inner join huizen on afbeelding.huis_id = h.id;
+select a.afbeelding, h.huis from afbeeldingen a inner join huizen h on a.huis_id = h.id;
 
-
+-- dit wordt de nieuwe sql om huizen te selecteren want afbeelding is vereist
+select h.huis, h.personen, h.omschrijving, h.prijs, a.afbeelding from afbeeldingen a inner join huizen h on a.huis_id = h.id;
 
 
 

@@ -1,0 +1,10 @@
+
+img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    transition-duration: 500ms;
+}
+img:hover {
+    height: 180px;
+}
